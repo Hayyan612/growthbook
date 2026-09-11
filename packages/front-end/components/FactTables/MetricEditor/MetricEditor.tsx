@@ -556,6 +556,12 @@ export default function MetricEditor({
               ))}
           </Flex>
         </Frame>
+        <AdvancedSettings
+          form={form}
+          formType={formType}
+          factTable={factTable}
+          canEdit={canEdit}
+        />
       </Flex>
 
       <Flex direction="column" gap="4" minWidth="0">
@@ -563,13 +569,6 @@ export default function MetricEditor({
           parts={previewParts}
           previewSql={previewSql}
           metric={canEdit ? null : existingMetric}
-        />
-
-        <AdvancedSettings
-          form={form}
-          formType={formType}
-          factTable={factTable}
-          canEdit={canEdit}
         />
       </Flex>
     </Grid>
