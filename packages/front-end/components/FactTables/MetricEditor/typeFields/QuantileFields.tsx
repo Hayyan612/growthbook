@@ -71,7 +71,7 @@ export default function QuantileFields({
       <DataList
         maxColumns={1}
         data={[
-          { label: "Scope", value: SCOPE_LABELS[scope] },
+          { label: "Across", value: SCOPE_LABELS[scope] },
           {
             label: "Value",
             value: columnValueLabel(numerator.column, factTable),

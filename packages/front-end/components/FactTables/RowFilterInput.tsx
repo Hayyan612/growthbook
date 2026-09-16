@@ -36,7 +36,7 @@ export function RowFilterInput({
 
   return (
     <Flex direction="column" gap="2">
-      <strong>Row Filter</strong>
+      <strong>Row filter</strong>
       {sampleRowsOpen && (
         <SampleRowsModal
           factTableId={factTable.id}
