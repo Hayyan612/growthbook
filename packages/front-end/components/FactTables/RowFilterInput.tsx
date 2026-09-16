@@ -3,6 +3,7 @@ import { FactTableInterface, RowFilter } from "shared/types/fact-table";
 import { useMemo, useState } from "react";
 import { PiTable } from "react-icons/pi";
 import Button from "@/ui/Button";
+import Text from "@/ui/Text";
 import Tooltip from "@/components/Tooltip/Tooltip";
 import { useDefinitions } from "@/services/DefinitionsContext";
 import usePermissionsUtil from "@/hooks/usePermissionsUtils";
@@ -41,7 +42,7 @@ export function RowFilterInput({
   return (
     <Flex direction="column" gap="2">
       <Flex align="center" justify="between" gap="2">
-        <strong>Row filter</strong>
+        <Text weight="semibold">Row filter</Text>
         {canShowSampleRows && (
           <Tooltip
             shouldDisplay={!canViewSampleRows}
