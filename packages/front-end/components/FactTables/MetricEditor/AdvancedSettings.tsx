@@ -20,6 +20,7 @@ import { useOrganizationMetricDefaults } from "@/hooks/useOrganizationMetricDefa
 import Frame from "@/ui/Frame";
 import Text from "@/ui/Text";
 import Checkbox from "@/ui/Checkbox";
+import Switch from "@/ui/Switch";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/ui/Tabs";
 import { Select, SelectItem } from "@/ui/Select";
 import MultiSelectField from "@/ui/MultiSelectField";
@@ -208,8 +209,8 @@ export default function AdvancedSettings({
         <Flex direction="column" gap="3" mt="3">
           <Tabs defaultValue="analysis">
             <TabsList mb="4" aria-label="Advanced settings">
-              <TabsTrigger value="analysis">Analysis Settings</TabsTrigger>
-              <TabsTrigger value="display">Display Settings</TabsTrigger>
+              <TabsTrigger value="analysis">Analysis settings</TabsTrigger>
+              <TabsTrigger value="display">Display settings</TabsTrigger>
             </TabsList>
             <TabsContent value="analysis" forceMount>
               <Flex direction="column" gap="4">
@@ -269,10 +270,10 @@ export default function AdvancedSettings({
                             Regression adjustment (CUPED)
                           </Text>
                         </PremiumTooltip>
-                        <Checkbox
+                        <Switch
                           label="Override organization-level settings"
                           value={form.watch("regressionAdjustmentOverride")}
-                          setValue={(v) =>
+                          onChange={(v) =>
                             form.setValue("regressionAdjustmentOverride", v)
                           }
                           disabled={!hasRegressionAdjustmentFeature}

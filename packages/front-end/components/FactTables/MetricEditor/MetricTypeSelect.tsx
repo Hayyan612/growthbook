@@ -1,6 +1,7 @@
 import { Flex } from "@radix-ui/themes";
 import { CommercialFeature } from "shared/enterprise";
 import { Select, SelectGroup, SelectItem, SelectLabel } from "@/ui/Select";
+import Text from "@/ui/Text";
 import PaidFeatureBadge from "@/components/GetStarted/PaidFeatureBadge";
 import { FormMetricType } from "@/components/FactTables/MetricEditor/metricFormTranslation";
 import styles from "./MetricTypeSelect.module.scss";
@@ -130,7 +131,6 @@ export default function MetricTypeSelect({
                       {PREMIUM_FEATURES[type] && (
                         <PaidFeatureBadge
                           commercialFeature={PREMIUM_FEATURES[type]}
-                          showWhenEnabled
                         />
                       )}
                     </Flex>
@@ -144,6 +144,9 @@ export default function MetricTypeSelect({
           </SelectGroup>
         ))}
       </Select>
+      <Text size="sm" color="text-mid" as="div">
+        {TYPE_DESCRIPTIONS[value]}
+      </Text>
     </Flex>
   );
 }
